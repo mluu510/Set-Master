@@ -10,8 +10,7 @@
 
 @implementation ShapeView
 
-- (id)initWithFrame:(CGRect)frame andSymbol:(Symbol)symbol andColor:(UIColor *)color andShading:(Shading)shading;
-{
+- (id)initWithFrame:(CGRect)frame andSymbol:(Symbol)symbol andColor:(UIColor *)color andShading:(Shading)shading; {
     self = [super initWithFrame:frame];
     if (self) {
         self.symbol = symbol;
@@ -22,26 +21,40 @@
     return self;
 }
 
-+ (ShapeView *)shapeViewWithFrame:(CGRect)frame andSymbol:(Symbol)symbol andColor:(UIColor *)color andShading:(Shading)shading;
-{
++ (ShapeView *)shapeViewWithFrame:(CGRect)frame andSymbol:(Symbol)symbol andColor:(UIColor *)color andShading:(Shading)shading {
     return [[ShapeView alloc] initWithFrame:frame andSymbol:symbol andColor:color andShading:shading];
 }
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
 //    self.backgroundColor = [UIColor clearColor];
     UIBezierPath *path = [self pathForShapeForRect:CGRectInset(rect, 2, 2)];
     path.lineWidth = 2;
     [self.color set];
     [path stroke];
     
-    UIImage *patternImage = [self patternImage];
-    [[UIColor colorWithPatternImage:patternImage] set];
+    [self fillPath:path];
+}
+
+- (void)fillPath:(UIBezierPath *)path
+{
+    switch (self.shading) {
+        case OPEN:
+            return;
+        case STRIPED: {
+            UIImage *patternImage = [self patternImage];
+            [[UIColor colorWithPatternImage:patternImage] set];
+            break;
+        }
+        case SOLID: {
+            [self.color set];
+        }
+        default:
+            break;
+    }
     [path fill];
 }
 
-- (UIBezierPath *)pathForShapeForRect:(CGRect)rect
-{
+- (UIBezierPath *)pathForShapeForRect:(CGRect)rect {
     UIBezierPath *path;
     switch (self.symbol) {
         case SQUARE:
@@ -59,8 +72,7 @@
     return path;
 }
 
-- (UIBezierPath *)bezierPathWithTriangleInRect:(CGRect)rect
-{
+- (UIBezierPath *)bezierPathWithTriangleInRect:(CGRect)rect {
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(   rect.origin.x + rect.size.width/2, rect.origin.y + 0)];
     [path addLineToPoint:CGPointMake(rect.origin.x + 0,                 rect.origin.y + rect.size.height)];
@@ -70,8 +82,7 @@
     return path;
 }
 
-- (UIImage *)patternImage
-{
+- (UIImage *)patternImage {
     // Used to draw the stripe pattern for the symbols
     CGSize patternSize = CGSizeMake(1.0, 2.0);
     UIGraphicsBeginImageContextWithOptions(patternSize, NO, [UIScreen mainScreen].scale);

@@ -11,38 +11,39 @@
 
 @implementation CardView
 
-- (void)setSetCard:(SetCard *)setCard
-{
+- (void)setSetCard:(SetCard *)setCard {
     if (_setCard != setCard) {
+        [_setCard removeObserver:self forKeyPath:@"select"];
+        
         _setCard = setCard;
+        [setCard addObserver:self forKeyPath:@"select" options:0 context:nil];
         [self setNeedsDisplay];
     }
 }
 
-- (void)setHighlight:(BOOL)highlight
-{
-    if (_highlight != highlight) {
-        _highlight = highlight;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"select"]) {
         [self setNeedsDisplay];
     }
 }
 
-- (void)updateView
-{
+- (void)updateView {
     [self setNeedsDisplay];
 }
 
 #define CORNER_RADIUS_RATIO 0.10
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
+    for (ShapeView *shapeView in self.subviews) {
+        [shapeView removeFromSuperview];
+    }
+    
     [super drawRect:rect];
-    [self drawBackgroundWithRect:rect];
+    [self drawBackgroundWithRect:CGRectInset(rect, 1, 1)];
     [self drawShapes];
 }
 
-- (void)drawBackgroundWithRect:(CGRect)rect
-{
+- (void)drawBackgroundWithRect:(CGRect)rect {
     CGFloat minLength = MIN(rect.size.width, rect.size.height);
     CGFloat cornerRadius = minLength * CORNER_RADIUS_RATIO;
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
@@ -58,10 +59,9 @@
     }
 }
 
-#define SYMBOL_LENGTH_RATIO 0.50
+#define SYMBOL_LENGTH_RATIO 0.55
 
-- (void)drawShapes
-{
+- (void)drawShapes {
     CGFloat minLength = MIN(self.bounds.size.width, self.bounds.size.height);
     CGFloat length = minLength * SYMBOL_LENGTH_RATIO;
     CGRect frame = CGRectMake(0, 0, length, length);
@@ -117,6 +117,10 @@
             return nil;
             break;
     }
+}
+
+- (void)dealloc {
+    [self.setCard removeObserver:self forKeyPath:@"select"];
 }
 
 @end

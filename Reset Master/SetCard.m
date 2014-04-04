@@ -10,10 +10,8 @@
 
 @implementation SetCard
 
-- (id)initWithSymbol:(Symbol)aSymbol color:(Color)aColor shading:(Shading)aShading number:(int)aNumber
-{
-    if (self = [super init])
-    {
+- (id)initWithSymbol:(Symbol)aSymbol color:(Color)aColor shading:(Shading)aShading number:(int)aNumber {
+    if (self = [super init]) {
         self.symbol = aSymbol;
         self.color = aColor;
         self.shading = aShading;

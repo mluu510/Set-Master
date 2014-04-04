@@ -8,22 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum
-{
+typedef enum {
     SQUARE,
     CIRCLE,
     TRIANGLE
 } Symbol;
 
-typedef enum
-{
+typedef enum {
     RED,
     GREEN,
     BLUE
 } Color;
 
-typedef enum
-{
+typedef enum {
     OPEN,
     STRIPED,
     SOLID

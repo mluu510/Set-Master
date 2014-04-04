@@ -10,6 +10,7 @@
 #import "CardView.h"
 
 @interface CardCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet CardView *cardView;
 
 @end

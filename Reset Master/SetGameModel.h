@@ -15,6 +15,7 @@
 - (void)insertCellAtIndexPaths:(NSArray *)indexPaths;
 - (void)incorrectMatch;
 - (void)correctMatch;
+
 @end
 
 @interface SetGameModel : NSObject
@@ -22,12 +23,14 @@
 @property (nonatomic, weak) id <SetGameModelDelegate> delegate;
 @property (nonatomic, readonly) int score;
 
+- (void)drawThreeCards;
+
 - (SetCard *)cardAtIndex:(int)index;
 - (void)selectCardAtIndex:(int)index;
-- (int)numOfCardsInPlay;
-- (void)drawThreeCards;
+
+- (int)numPlayCards;
 - (int)cardsLeft;
-- (NSArray *)foundSets;
-- (NSArray *)hasSet;
+
+- (BOOL)hasSet;
 
 @end
