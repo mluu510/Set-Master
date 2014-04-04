@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "CardView.h"
+#import "SetCard.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet CardView *cardView;
 
 @end
 
@@ -17,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    SetCard *setCard = [SetCard alloc] initWithSymbol:SQ color:<#(Color)#> shading:<#(Shading)#> number:<#(int)#>
 }
 
 - (void)didReceiveMemoryWarning
