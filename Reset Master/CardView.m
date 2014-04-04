@@ -36,8 +36,8 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    [super drawRect:rect];
     [self drawBackgroundWithRect:rect];
-    
     [self drawShapes];
 }
 
@@ -63,37 +63,45 @@
 - (void)drawShapes
 {
     CGFloat minLength = MIN(self.bounds.size.width, self.bounds.size.height);
-    CGFloat width = minLength * SYMBOL_LENGTH_RATIO;
-    CGRect frame = CGRectMake(0, 0, width, width);
-    
-    UIColor *color = [self setCardColor:self.setCard.color];
-    
-    ShapeView *shapeView = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
-    shapeView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
-    [self addSubview:shapeView];
-    
-    ShapeView *shapeView2 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
-    shapeView2.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/5);
-    [self addSubview:shapeView2];
-    
-    ShapeView *shapeView3 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
-    shapeView3.center = CGPointMake(self.bounds.size.width/2, 4*self.bounds.size.height/5);
-    [self addSubview:shapeView3];
+    CGFloat length = minLength * SYMBOL_LENGTH_RATIO;
+    CGRect frame = CGRectMake(0, 0, length, length);
+    UIColor *color = [self setCardColor];
     
     switch (self.setCard.number) {
-        case 1:
+        case 3: {
+            ShapeView *shapeView2 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+            shapeView2.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/5);
+            [self addSubview:shapeView2];
+            
+            ShapeView *shapeView3 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+            shapeView3.center = CGPointMake(self.bounds.size.width/2, 4*self.bounds.size.height/5);
+            [self addSubview:shapeView3];
+        }
+        case 1: {
+            ShapeView *shapeView = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+            shapeView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
+            [self addSubview:shapeView];
+            
+            break;
+        }
 
+        case 2: {
+            ShapeView *shapeView2 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+            shapeView2.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/3);
+            [self addSubview:shapeView2];
+            
+            ShapeView *shapeView3 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+            shapeView3.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height*2/3);
+            [self addSubview:shapeView3];
+            
             break;
-        case 2:
-            break;
-        case 3:
-            break;
+        }
         default:
             break;
     }
 }
 
-- (UIColor *)setCardColor:(Color)color
+- (UIColor *)setCardColor
 {
     switch (self.setCard.color) {
         case RED:
@@ -103,11 +111,12 @@
             return [UIColor greenColor];
             break;
         case BLUE:
-            return [UIColor purpleColor];
+            return [UIColor blueColor];
             break;
         default:
             return nil;
             break;
     }
 }
+
 @end

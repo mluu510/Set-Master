@@ -9,26 +9,47 @@
 #import "ViewController.h"
 #import "CardView.h"
 #import "SetCard.h"
+#import "SetGameModel.h"
+#import "CardCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet CardView *cardView;
+@property (nonatomic, strong) SetGameModel *model;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 @end
 
 @implementation ViewController
 
+- (SetGameModel *)model
+{
+    if (!_model)
+    {
+        _model = [[SetGameModel alloc] init];
+        _model.delegate = self;
+    }
+    return _model;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SetCard *setCard = [[SetCard alloc] initWithSymbol:TRIANGLE color:GREEN shading:STRIPED number:1];
-    self.cardView.setCard = setCard;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [self.model numOfCardsInPlay];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CardCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Card Cell" forIndexPath:indexPath];
+    SetCard *setCard = [self.model cardAtIndex:indexPath.item];
+    cell.cardView.setCard = setCard;
+    return cell;
 }
 
 @end

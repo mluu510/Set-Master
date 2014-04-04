@@ -26,6 +26,8 @@
 		27589E6818EE20CC00BB768B /* ShapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E6718EE20CC00BB768B /* ShapeView.m */; };
 		27589E6E18EE210B00BB768B /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E6D18EE210B00BB768B /* SetCard.m */; };
 		27589E7118EE30E900BB768B /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7018EE30E900BB768B /* CardView.m */; };
+		27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7318EE6F4A00BB768B /* SetGameModel.m */; };
+		27589E7A18EE795A00BB768B /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7918EE795A00BB768B /* CardCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		27589E6D18EE210B00BB768B /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
 		27589E6F18EE30E900BB768B /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		27589E7018EE30E900BB768B /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		27589E7218EE6F4A00BB768B /* SetGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameModel.h; sourceTree = "<group>"; };
+		27589E7318EE6F4A00BB768B /* SetGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameModel.m; sourceTree = "<group>"; };
+		27589E7818EE795A00BB768B /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
+		27589E7918EE795A00BB768B /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +134,18 @@
 				27589E3C18ED19AA00BB768B /* AppDelegate.h */,
 				27589E3D18ED19AA00BB768B /* AppDelegate.m */,
 				27589E3F18ED19AA00BB768B /* Main.storyboard */,
-				27589E6618EE20CC00BB768B /* ShapeView.h */,
-				27589E6718EE20CC00BB768B /* ShapeView.m */,
-				27589E6F18EE30E900BB768B /* CardView.h */,
-				27589E7018EE30E900BB768B /* CardView.m */,
 				27589E4218ED19AA00BB768B /* ViewController.h */,
 				27589E4318ED19AA00BB768B /* ViewController.m */,
+				27589E7818EE795A00BB768B /* CardCell.h */,
+				27589E7918EE795A00BB768B /* CardCell.m */,
+				27589E6F18EE30E900BB768B /* CardView.h */,
+				27589E7018EE30E900BB768B /* CardView.m */,
+				27589E6618EE20CC00BB768B /* ShapeView.h */,
+				27589E6718EE20CC00BB768B /* ShapeView.m */,
 				27589E6C18EE210B00BB768B /* SetCard.h */,
 				27589E6D18EE210B00BB768B /* SetCard.m */,
+				27589E7218EE6F4A00BB768B /* SetGameModel.h */,
+				27589E7318EE6F4A00BB768B /* SetGameModel.m */,
 				27589E4518ED19AA00BB768B /* Images.xcassets */,
 				27589E3418ED19AA00BB768B /* Supporting Files */,
 			);
@@ -272,12 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */,
 				27589E4418ED19AA00BB768B /* ViewController.m in Sources */,
 				27589E3E18ED19AA00BB768B /* AppDelegate.m in Sources */,
 				27589E6E18EE210B00BB768B /* SetCard.m in Sources */,
 				27589E6818EE20CC00BB768B /* ShapeView.m in Sources */,
 				27589E3A18ED19AA00BB768B /* main.m in Sources */,
 				27589E7118EE30E900BB768B /* CardView.m in Sources */,
+				27589E7A18EE795A00BB768B /* CardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
