@@ -17,6 +17,7 @@
         self.symbol = symbol;
         self.color = color;
         self.shading = shading;
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -28,6 +29,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+//    self.backgroundColor = [UIColor clearColor];
     UIBezierPath *path = [self pathForShapeForRect:CGRectInset(rect, 2, 2)];
     path.lineWidth = 2;
     [self.color set];
@@ -71,15 +73,16 @@
 - (UIImage *)patternImage
 {
     // Used to draw the stripe pattern for the symbols
-    CGSize patternSize = CGSizeMake(1.0, 5.0);
+    CGSize patternSize = CGSizeMake(1.0, 2.0);
     UIGraphicsBeginImageContextWithOptions(patternSize, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     [self.color set];
     
-    CGContextMoveToPoint(context, 0.0, 5.0);
-    CGContextAddLineToPoint(context, 1.0, 5.0);
-    CGContextSetLineWidth(context, 3.0);
+    CGContextMoveToPoint(context, 0.0, 0);
+    CGContextAddLineToPoint(context, 1.0, 0);
+    
+    CGContextSetLineWidth(context, 1.0);
     CGContextStrokePath(context);
     
     UIImage *patternImage = UIGraphicsGetImageFromCurrentImageContext();

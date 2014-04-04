@@ -123,13 +123,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woodbg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-s3-7kG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zo-E8-Lax" customClass="CardView">
-                                <rect key="frame" x="63" y="150" width="195" height="180"/>
+                                <rect key="frame" x="125" y="180" width="70" height="120"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.27843138579999999" green="0.38823533059999998" blue="0.61960786580000005" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="EOl-s3-7kG" firstAttribute="top" secondItem="Jsh-Xe-FqH" secondAttribute="top" id="8cj-OX-80y"/>
+                            <constraint firstAttribute="trailing" secondItem="EOl-s3-7kG" secondAttribute="trailing" id="Bw6-Oj-ThA"/>
+                            <constraint firstItem="EOl-s3-7kG" firstAttribute="leading" secondItem="Jsh-Xe-FqH" secondAttribute="leading" id="Cdt-9r-DA7"/>
+                            <constraint firstItem="2Fd-qa-Jv3" firstAttribute="top" secondItem="EOl-s3-7kG" secondAttribute="bottom" id="ME1-vR-97e"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cardView" destination="4Zo-E8-Lax" id="KhL-Iv-PAN"/>

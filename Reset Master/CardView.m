@@ -32,7 +32,7 @@
     [self setNeedsDisplay];
 }
 
-#define CORNER_RADIUS_RATIO 0.18
+#define CORNER_RADIUS_RATIO 0.10
 
 - (void)drawRect:(CGRect)rect
 {
@@ -43,7 +43,8 @@
 
 - (void)drawBackgroundWithRect:(CGRect)rect
 {
-    CGFloat cornerRadius = rect.size.width * CORNER_RADIUS_RATIO;
+    CGFloat minLength = MIN(rect.size.width, rect.size.height);
+    CGFloat cornerRadius = minLength * CORNER_RADIUS_RATIO;
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius];
     
     if (self.setCard.isSelected) {
@@ -57,18 +58,27 @@
     }
 }
 
-#define SYMBOL_WIDTH_RATIO 0.18
-#define SYMBOL_HEIGHT_RATIO 0.70
+#define SYMBOL_LENGTH_RATIO 0.50
 
 - (void)drawShapes
 {
-    CGRect frame = CGRectMake(0, 0, self.bounds.size.width * SYMBOL_WIDTH_RATIO, self.bounds.size.height * SYMBOL_HEIGHT_RATIO);
+    CGFloat minLength = MIN(self.bounds.size.width, self.bounds.size.height);
+    CGFloat width = minLength * SYMBOL_LENGTH_RATIO;
+    CGRect frame = CGRectMake(0, 0, width, width);
     
     UIColor *color = [self setCardColor:self.setCard.color];
     
     ShapeView *shapeView = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
-    
+    shapeView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
     [self addSubview:shapeView];
+    
+    ShapeView *shapeView2 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+    shapeView2.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/5);
+    [self addSubview:shapeView2];
+    
+    ShapeView *shapeView3 = [ShapeView shapeViewWithFrame:frame andSymbol:self.setCard.symbol andColor:color andShading:self.setCard.shading];
+    shapeView3.center = CGPointMake(self.bounds.size.width/2, 4*self.bounds.size.height/5);
+    [self addSubview:shapeView3];
     
     switch (self.setCard.number) {
         case 1:
@@ -92,7 +102,7 @@
         case GREEN:
             return [UIColor greenColor];
             break;
-        case PURPLE:
+        case BLUE:
             return [UIColor purpleColor];
             break;
         default:

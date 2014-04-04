@@ -7,18 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef enum {
-    SQUARE,
-    CIRCLE,
-    TRIANGLE
-} Symbol;
-
-typedef enum {
-    OPEN,
-    STRIPED,
-    SOLID
-} Shading;
+#import "SetCard.h"
 
 @interface ShapeView : UIView
 

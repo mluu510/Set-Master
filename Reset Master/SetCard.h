@@ -10,16 +10,16 @@
 
 typedef enum
 {
-    OVAL,
-    SQUGGLE,
-    DIAMOND
+    SQUARE,
+    CIRCLE,
+    TRIANGLE
 } Symbol;
 
 typedef enum
 {
     RED,
     GREEN,
-    PURPLE
+    BLUE
 } Color;
 
 typedef enum

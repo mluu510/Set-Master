@@ -21,7 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    SetCard *setCard = [SetCard alloc] initWithSymbol:SQ color:<#(Color)#> shading:<#(Shading)#> number:<#(int)#>
+    SetCard *setCard = [[SetCard alloc] initWithSymbol:TRIANGLE color:GREEN shading:STRIPED number:1];
+    self.cardView.setCard = setCard;
 }
 
 - (void)didReceiveMemoryWarning
