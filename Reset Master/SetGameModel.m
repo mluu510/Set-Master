@@ -46,7 +46,8 @@
         for (Shading shading = OPEN; shading <= SOLID; shading++)
             for (Symbol symbol = SQUARE; symbol <= TRIANGLE; symbol++)
                 for (int i = 1; i <= 3; i++) {
-                    SetCard *setCard = [[SetCard alloc] initWithSymbol:symbol color:color shading:shading number:i];
+                    Shading shading2 = self.gameMode == EASY ? STRIPED : shading;
+                    SetCard *setCard = [[SetCard alloc] initWithSymbol:symbol color:color shading:shading2 number:i];
                     [self.deck addObject:setCard];
                 }
 }
@@ -72,7 +73,7 @@
             [self.playCards addObject:self.deck.lastObject];
             [self.deck removeLastObject];
         } else {
-            NSLog(@"WARNING: deck depleted!");
+//            NSLog(@"WARNING: deck depleted!");
             return nil;
         }
     }
@@ -101,8 +102,6 @@
 - (void)checkForSet {
     if (self.selectedCards.count == MAX_SELECTION) {
         if ([self isSet:self.selectedCards]) {
-            // Remove set from cardsInPlay
-            [self.playCards removeObjectsInArray:self.selectedCards];
             
             // Build index paths to remove from collection view
             NSMutableArray *indexPaths = [@[] mutableCopy];
@@ -110,11 +109,15 @@
                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[self.playCards indexOfObject:setCard] inSection:0];
                 [indexPaths addObject:indexPath];
             }
+            
+            // Remove set from cardsInPlay
+            [self.playCards removeObjectsInArray:self.selectedCards];
             [self.delegate removeCellAtIndexPaths:indexPaths];
             
             // Add set to sets array
             [self.sets addObject:[self.selectedCards copy]];
             
+            // Draw more cards if less than 12
             if (self.playCards.count < 12)
                 [self drawThreeCards];
             [self.delegate correctMatch];

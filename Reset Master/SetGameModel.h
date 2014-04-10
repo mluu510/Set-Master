@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "SetCard.h"
 
+typedef enum {
+    EASY,
+    HARD
+} GameMode;
+
 @protocol SetGameModelDelegate <NSObject>
 
 - (void)removeCellAtIndexPaths:(NSArray *)indexPaths;
@@ -22,6 +27,7 @@
 
 @property (nonatomic, weak) id <SetGameModelDelegate> delegate;
 @property (nonatomic, readonly) int score;
+@property (nonatomic) GameMode gameMode;
 
 - (void)drawThreeCards;
 

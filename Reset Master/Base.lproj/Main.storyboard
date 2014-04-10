@@ -70,7 +70,13 @@
                             <constraint firstItem="qAe-Nc-g5x" firstAttribute="leading" secondItem="B3l-RE-5FT" secondAttribute="leading" id="nro-N1-MKA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LzN-it-9Wz"/>
+                    <navigationItem key="navigationItem" id="LzN-it-9Wz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="eN6-c2-NcG">
+                            <connections>
+                                <segue destination="g1K-4v-zyo" kind="modal" modalTransitionStyle="flipHorizontal" id="h60-Hw-AvD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="qAe-Nc-g5x" id="8gW-Iv-VX7"/>
                     </connections>
@@ -123,6 +129,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdD-V4-W0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="72"/>
+        </scene>
+        <!--Pause Menu Table View Controller-->
+        <scene sceneID="saF-eq-duo">
+            <objects>
+                <tableViewController id="g1K-4v-zyo" customClass="PauseMenuTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="FwU-fr-ba2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Game Paused" id="DD4-r5-Xd7">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NlA-Cq-ZWL" style="IBUITableViewCellStyleDefault" id="sCd-nt-4gm">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sCd-nt-4gm" id="uLe-tm-hrP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Resume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NlA-Cq-ZWL">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ckA-TI-32Q" style="IBUITableViewCellStyleDefault" id="Tpo-Tr-gYc">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tpo-Tr-gYc" id="jCs-0P-ctq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Quit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ckA-TI-32Q">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="g1K-4v-zyo" id="5hR-q7-oYC"/>
+                            <outlet property="delegate" destination="g1K-4v-zyo" id="6OC-QY-gJU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lDe-dz-4vF"/>
+                    <connections>
+                        <outlet property="quitCell" destination="Tpo-Tr-gYc" id="Yue-DN-ZHs"/>
+                        <outlet property="resumeCell" destination="sCd-nt-4gm" id="XWf-rO-w2b"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WG-2U-6bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LlA-A6-fDO">

@@ -28,6 +28,15 @@
 		27589E7118EE30E900BB768B /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7018EE30E900BB768B /* CardView.m */; };
 		27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7318EE6F4A00BB768B /* SetGameModel.m */; };
 		27589E7A18EE795A00BB768B /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7918EE795A00BB768B /* CardCell.m */; };
+		27AFFF6218F6488500F895F1 /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6118F6488500F895F1 /* select.wav */; };
+		27AFFF6418F648C500F895F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AFFF6318F648C500F895F1 /* AVFoundation.framework */; };
+		27AFFF6618F64A5E00F895F1 /* select2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6518F64A5E00F895F1 /* select2.wav */; };
+		27AFFF6818F64C9100F895F1 /* select2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6718F64B0800F895F1 /* select2.m4a */; };
+		27AFFF6E18F651E800F895F1 /* success2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6D18F651E800F895F1 /* success2.m4a */; };
+		27AFFF7018F6553900F895F1 /* select3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6F18F6553900F895F1 /* select3.mp3 */; };
+		27AFFF7218F6566100F895F1 /* select3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF7118F6566100F895F1 /* select3.mov */; };
+		27AFFF7418F656A900F895F1 /* select4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF7318F656A900F895F1 /* select4.mp3 */; };
+		27AFFF7718F658C900F895F1 /* PauseMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AFFF7618F658C900F895F1 /* PauseMenuTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +81,16 @@
 		27589E7318EE6F4A00BB768B /* SetGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameModel.m; sourceTree = "<group>"; };
 		27589E7818EE795A00BB768B /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
 		27589E7918EE795A00BB768B /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
+		27AFFF6118F6488500F895F1 /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
+		27AFFF6318F648C500F895F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27AFFF6518F64A5E00F895F1 /* select2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select2.wav; sourceTree = "<group>"; };
+		27AFFF6718F64B0800F895F1 /* select2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = select2.m4a; sourceTree = "<group>"; };
+		27AFFF6D18F651E800F895F1 /* success2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success2.m4a; sourceTree = "<group>"; };
+		27AFFF6F18F6553900F895F1 /* select3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select3.mp3; sourceTree = "<group>"; };
+		27AFFF7118F6566100F895F1 /* select3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = select3.mov; sourceTree = "<group>"; };
+		27AFFF7318F656A900F895F1 /* select4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select4.mp3; sourceTree = "<group>"; };
+		27AFFF7518F658C900F895F1 /* PauseMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseMenuTableViewController.h; sourceTree = "<group>"; };
+		27AFFF7618F658C900F895F1 /* PauseMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseMenuTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AFFF6418F648C500F895F1 /* AVFoundation.framework in Frameworks */,
 				27589E3018ED19AA00BB768B /* CoreGraphics.framework in Frameworks */,
 				27589E3218ED19AA00BB768B /* UIKit.framework in Frameworks */,
 				27589E2E18ED19AA00BB768B /* Foundation.framework in Frameworks */,
@@ -120,6 +140,7 @@
 		27589E2C18ED19AA00BB768B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27AFFF6318F648C500F895F1 /* AVFoundation.framework */,
 				27589E2D18ED19AA00BB768B /* Foundation.framework */,
 				27589E2F18ED19AA00BB768B /* CoreGraphics.framework */,
 				27589E3118ED19AA00BB768B /* UIKit.framework */,
@@ -134,6 +155,8 @@
 				27589E3C18ED19AA00BB768B /* AppDelegate.h */,
 				27589E3D18ED19AA00BB768B /* AppDelegate.m */,
 				27589E3F18ED19AA00BB768B /* Main.storyboard */,
+				27AFFF7518F658C900F895F1 /* PauseMenuTableViewController.h */,
+				27AFFF7618F658C900F895F1 /* PauseMenuTableViewController.m */,
 				27589E4218ED19AA00BB768B /* ViewController.h */,
 				27589E4318ED19AA00BB768B /* ViewController.m */,
 				27589E7818EE795A00BB768B /* CardCell.h */,
@@ -155,6 +178,13 @@
 		27589E3418ED19AA00BB768B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27AFFF6D18F651E800F895F1 /* success2.m4a */,
+				27AFFF7318F656A900F895F1 /* select4.mp3 */,
+				27AFFF6118F6488500F895F1 /* select.wav */,
+				27AFFF7118F6566100F895F1 /* select3.mov */,
+				27AFFF6518F64A5E00F895F1 /* select2.wav */,
+				27AFFF6718F64B0800F895F1 /* select2.m4a */,
+				27AFFF6F18F6553900F895F1 /* select3.mp3 */,
 				27589E6418ED1E9F00BB768B /* bg1.jpg */,
 				27589E6218ED1A9300BB768B /* woodbg@2x.jpg */,
 				27589E3518ED19AA00BB768B /* Reset Master-Info.plist */,
@@ -262,7 +292,14 @@
 				27589E6318ED1A9300BB768B /* woodbg@2x.jpg in Resources */,
 				27589E4618ED19AA00BB768B /* Images.xcassets in Resources */,
 				27589E3818ED19AA00BB768B /* InfoPlist.strings in Resources */,
+				27AFFF6618F64A5E00F895F1 /* select2.wav in Resources */,
+				27AFFF6818F64C9100F895F1 /* select2.m4a in Resources */,
+				27AFFF7418F656A900F895F1 /* select4.mp3 in Resources */,
+				27AFFF7218F6566100F895F1 /* select3.mov in Resources */,
 				27589E4118ED19AA00BB768B /* Main.storyboard in Resources */,
+				27AFFF7018F6553900F895F1 /* select3.mp3 in Resources */,
+				27AFFF6218F6488500F895F1 /* select.wav in Resources */,
+				27AFFF6E18F651E800F895F1 /* success2.m4a in Resources */,
 				27589E6518ED1E9F00BB768B /* bg1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +322,7 @@
 				27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */,
 				27589E4418ED19AA00BB768B /* ViewController.m in Sources */,
 				27589E3E18ED19AA00BB768B /* AppDelegate.m in Sources */,
+				27AFFF7718F658C900F895F1 /* PauseMenuTableViewController.m in Sources */,
 				27589E6E18EE210B00BB768B /* SetCard.m in Sources */,
 				27589E6818EE20CC00BB768B /* ShapeView.m in Sources */,
 				27589E3A18ED19AA00BB768B /* main.m in Sources */,
@@ -494,6 +532,7 @@
 				27589E5E18ED19AA00BB768B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27589E5F18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Reset MasterTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +541,7 @@
 				27589E6118ED19AA00BB768B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
