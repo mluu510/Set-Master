@@ -29,6 +29,7 @@
 		27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7318EE6F4A00BB768B /* SetGameModel.m */; };
 		27589E7A18EE795A00BB768B /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27589E7918EE795A00BB768B /* CardCell.m */; };
 		276D8C0518F8C0AD0016E263 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C0418F8C0AD0016E263 /* MenuViewController.m */; };
+		276D8C0818F8CCA60016E263 /* FooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C0718F8CCA60016E263 /* FooterCell.m */; };
 		27AFFF6218F6488500F895F1 /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6118F6488500F895F1 /* select.wav */; };
 		27AFFF6418F648C500F895F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AFFF6318F648C500F895F1 /* AVFoundation.framework */; };
 		27AFFF6618F64A5E00F895F1 /* select2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6518F64A5E00F895F1 /* select2.wav */; };
@@ -85,6 +86,8 @@
 		27589E7918EE795A00BB768B /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
 		276D8C0318F8C0AD0016E263 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		276D8C0418F8C0AD0016E263 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		276D8C0618F8CCA60016E263 /* FooterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooterCell.h; sourceTree = "<group>"; };
+		276D8C0718F8CCA60016E263 /* FooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCell.m; sourceTree = "<group>"; };
 		27AFFF6118F6488500F895F1 /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		27AFFF6318F648C500F895F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27AFFF6518F64A5E00F895F1 /* select2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select2.wav; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				27589E3C18ED19AA00BB768B /* AppDelegate.h */,
 				27589E3D18ED19AA00BB768B /* AppDelegate.m */,
 				27589E3F18ED19AA00BB768B /* Main.storyboard */,
+				276D8C0618F8CCA60016E263 /* FooterCell.h */,
+				276D8C0718F8CCA60016E263 /* FooterCell.m */,
 				276D8C0318F8C0AD0016E263 /* MenuViewController.h */,
 				276D8C0418F8C0AD0016E263 /* MenuViewController.m */,
 				27589E4218ED19AA00BB768B /* GameViewController.h */,
@@ -337,6 +342,7 @@
 				27589E3A18ED19AA00BB768B /* main.m in Sources */,
 				27589E7118EE30E900BB768B /* CardView.m in Sources */,
 				27589E7A18EE795A00BB768B /* CardCell.m in Sources */,
+				276D8C0818F8CCA60016E263 /* FooterCell.m in Sources */,
 				276D8C0518F8C0AD0016E263 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

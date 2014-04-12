@@ -35,16 +35,29 @@
         self.selectedCards = [@[] mutableCopy];
         self.score = 0;
         
-        [self buildDeck];
+        if (self.gameMode == EASY) {
+            [self buildEasyDeck];
+        } else {
+            [self buildDeck];
+        }
         [self shuffleDeck];
         [self cardAtIndex:11];
     }
     return self;
 }
 
-- (void)buildDeck {
+- (void)buildEasyDeck {
     for (Color color = RED; color <= BLUE; color++)
-        for (Shading shading = OPEN; shading <= SOLID; shading++)
+        for (Symbol symbol = SQUARE; symbol <= TRIANGLE; symbol++)
+            for (int i = 1; i <= 3; i++) {
+                SetCard *setCard = [[SetCard alloc] initWithSymbol:symbol color:color shading:STRIPED number:i];
+                [self.deck addObject:setCard];
+            }
+}
+
+- (void)buildDeck {
+    for (Shading shading = OPEN; shading <= SOLID; shading++)
+        for (Color color = RED; color <= BLUE; color++)
             for (Symbol symbol = SQUARE; symbol <= TRIANGLE; symbol++)
                 for (int i = 1; i <= 3; i++) {
                     Shading shading2 = self.gameMode == EASY ? STRIPED : shading;

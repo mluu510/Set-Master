@@ -10,6 +10,7 @@
 #import "CardView.h"
 #import "SetCard.h"
 #import "CardCell.h"
+#import "FooterCell.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface GameViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SetGameModelDelegate>
@@ -21,11 +22,20 @@
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UILabel *cardsLeftLabel;
+@property (nonatomic, weak) FooterCell *footerCell;
 
 
 @end
 
 @implementation GameViewController
+
+- (IBAction)drawCards:(id)sender {
+    [self.model drawThreeCards];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[self.collectionView numberOfItemsInSection:0] - 1 inSection:0];
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    
+}
 
 - (void)correctMatch {
     [self.successSound play];
@@ -96,17 +106,30 @@
     
 }
 
+- (void)updateCardsLeftLabel {
+    self.footerCell.textLabel.text = [NSString stringWithFormat:@"%i cards left", self.model.cardsLeft];
+}
+
 - (void)removeCellAtIndexPaths:(NSArray *)indexPaths {
     [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+    
+
 }
 
 - (void)insertCellAtIndexPaths:(NSArray *)indexPaths {
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
+    [self updateCardsLeftLabel];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    self.footerCell = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+    [self updateCardsLeftLabel];
+    return  self.footerCell;
 }
 
 #define COLLECTION_VIEW_MARGIN 8
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(COLLECTION_VIEW_MARGIN, COLLECTION_VIEW_MARGIN, COLLECTION_VIEW_MARGIN + 44, COLLECTION_VIEW_MARGIN);
+    return UIEdgeInsetsMake(COLLECTION_VIEW_MARGIN, COLLECTION_VIEW_MARGIN, 0, COLLECTION_VIEW_MARGIN);
 }
 
 @end
