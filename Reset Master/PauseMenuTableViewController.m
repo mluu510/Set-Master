@@ -8,7 +8,7 @@
 
 #import "PauseMenuTableViewController.h"
 
-@interface PauseMenuTableViewController ()
+@interface PauseMenuTableViewController () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *resumeCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *quitCell;
@@ -17,11 +17,29 @@
 
 @implementation PauseMenuTableViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
+    
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"woodbg@2x.jpg"]];
+    self.tableView.backgroundColor = background;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if (cell == self.resumeCell) {
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self.navigationController popViewControllerAnimated:YES];
     } else if (cell == self.quitCell) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:nil delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alert show];
+        
+
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) { // User clicked "Yes"
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }

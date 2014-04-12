@@ -34,9 +34,11 @@ typedef enum {
 - (SetCard *)cardAtIndex:(int)index;
 - (void)selectCardAtIndex:(int)index;
 
-- (int)numPlayCards;
-- (int)cardsLeft;
+- (NSUInteger)numPlayCards;
+- (NSUInteger)cardsLeft;
 
 - (BOOL)hasSet;
+
+- (id)initWithGameMode:(GameMode)gameMode;
 
 @end

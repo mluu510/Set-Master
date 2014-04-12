@@ -20,15 +20,16 @@
 
 @implementation SetGameModel
 
-- (int)numPlayCards {
+- (NSUInteger)numPlayCards {
     return self.playCards.count;
 }
-- (int)cardsLeft {
+- (NSUInteger)cardsLeft {
     return self.deck.count;
 }
 
-- (id)init {
+- (id)initWithGameMode:(GameMode)gameMode {
     if (self = [super init]) {
+        self.gameMode = gameMode;
         self.deck = [@[] mutableCopy];
         self.playCards = [@[] mutableCopy];
         self.selectedCards = [@[] mutableCopy];

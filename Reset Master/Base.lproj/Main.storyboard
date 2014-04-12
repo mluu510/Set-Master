@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="b1G-E2-ncy">
             <objects>
-                <viewController id="dXK-Jc-esf" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="dXK-Jc-esf" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9o0-6Z-C01"/>
                         <viewControllerLayoutGuide type="bottom" id="ndk-pu-eHM"/>
@@ -51,31 +51,22 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQ4-BS-mER">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="dpC-mk-kjP"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ndk-pu-eHM" firstAttribute="top" secondItem="qAe-Nc-g5x" secondAttribute="bottom" id="2To-Xi-E8V"/>
                             <constraint firstItem="qAe-Nc-g5x" firstAttribute="top" secondItem="B3l-RE-5FT" secondAttribute="top" id="5Ha-5B-w2O"/>
-                            <constraint firstItem="jQ4-BS-mER" firstAttribute="leading" secondItem="B3l-RE-5FT" secondAttribute="leading" id="KWm-0f-bJs"/>
-                            <constraint firstItem="ndk-pu-eHM" firstAttribute="top" secondItem="jQ4-BS-mER" secondAttribute="bottom" id="Vdn-kM-f18"/>
                             <constraint firstAttribute="trailing" secondItem="qAe-Nc-g5x" secondAttribute="trailing" id="Z3Z-Ja-qyf"/>
-                            <constraint firstAttribute="trailing" secondItem="jQ4-BS-mER" secondAttribute="trailing" id="nWR-GY-APL"/>
                             <constraint firstItem="qAe-Nc-g5x" firstAttribute="leading" secondItem="B3l-RE-5FT" secondAttribute="leading" id="nro-N1-MKA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LzN-it-9Wz">
                         <barButtonItem key="leftBarButtonItem" systemItem="pause" id="eN6-c2-NcG">
                             <connections>
-                                <segue destination="g1K-4v-zyo" kind="modal" modalTransitionStyle="flipHorizontal" id="h60-Hw-AvD"/>
+                                <segue destination="g1K-4v-zyo" kind="push" id="XF2-Lv-2x8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="cards2.png" id="TWe-qD-wS9"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="qAe-Nc-g5x" id="8gW-Iv-VX7"/>
@@ -85,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="745" y="72"/>
         </scene>
-        <!--View Controller - Reset Master-->
+        <!--Menu View Controller - Reset Master-->
         <scene sceneID="Zhv-Yi-5ty">
             <objects>
-                <viewController id="8qw-yU-vFw" sceneMemberID="viewController">
+                <viewController id="8qw-yU-vFw" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qio-ob-rbs"/>
                         <viewControllerLayoutGuide type="bottom" id="HOs-yE-iIg"/>
@@ -102,16 +93,49 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83s-MQ-Auo">
-                                <rect key="frame" x="138" y="220" width="45" height="41"/>
+                                <rect key="frame" x="118" y="219" width="85" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="OrJ-Bf-ZDN"/>
+                                    <constraint firstAttribute="height" constant="41" id="pqI-Uw-JaI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Play">
+                                <state key="normal" title="Easy">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="dXK-Jc-esf" kind="push" id="W5Y-1G-eFd"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-A1-eft">
+                                <rect key="frame" x="118" y="268" width="85" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="JEF-nv-8Es"/>
+                                    <constraint firstAttribute="height" constant="41" id="doZ-NJ-yRy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dXK-Jc-esf" kind="push" id="eKh-Jq-pve"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-pM-g2h">
+                                <rect key="frame" x="118" y="317" width="85" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Sxu-4G-xIW"/>
+                                    <constraint firstAttribute="width" constant="85" id="dxb-gx-iyW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Learn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -120,17 +144,26 @@
                             <constraint firstAttribute="centerX" secondItem="83s-MQ-Auo" secondAttribute="centerX" id="GhS-cL-IRz"/>
                             <constraint firstAttribute="trailing" secondItem="f4G-t5-YyE" secondAttribute="trailing" id="He9-dF-M3D"/>
                             <constraint firstItem="f4G-t5-YyE" firstAttribute="leading" secondItem="hOv-vB-OqN" secondAttribute="leading" id="PLR-C9-8Aw"/>
+                            <constraint firstAttribute="centerX" secondItem="lJy-A1-eft" secondAttribute="centerX" id="akv-uL-14i"/>
+                            <constraint firstItem="lJy-A1-eft" firstAttribute="top" secondItem="83s-MQ-Auo" secondAttribute="bottom" constant="8" id="cge-af-dAA"/>
+                            <constraint firstAttribute="centerX" secondItem="TPu-pM-g2h" secondAttribute="centerX" id="exv-QC-MBr"/>
                             <constraint firstItem="f4G-t5-YyE" firstAttribute="top" secondItem="hOv-vB-OqN" secondAttribute="top" id="f9t-no-J7G"/>
                             <constraint firstItem="HOs-yE-iIg" firstAttribute="top" secondItem="f4G-t5-YyE" secondAttribute="bottom" id="mrj-iU-slc"/>
+                            <constraint firstItem="TPu-pM-g2h" firstAttribute="top" secondItem="lJy-A1-eft" secondAttribute="bottom" constant="8" id="oLy-SV-tPN"/>
+                            <constraint firstAttribute="centerX" secondItem="83s-MQ-Auo" secondAttribute="centerX" id="xBv-zL-iGi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reset Master" id="Ei5-6w-JR3"/>
+                    <connections>
+                        <outlet property="easyButton" destination="83s-MQ-Auo" id="JoJ-Rn-RDX"/>
+                        <outlet property="hardButton" destination="lJy-A1-eft" id="lJv-BS-a6J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdD-V4-W0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="72"/>
         </scene>
-        <!--Pause Menu Table View Controller-->
+        <!--Pause Menu Table View Controller - Game Paused-->
         <scene sceneID="saF-eq-duo">
             <objects>
                 <tableViewController id="g1K-4v-zyo" customClass="PauseMenuTableViewController" sceneMemberID="viewController">
@@ -139,10 +172,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Game Paused" id="DD4-r5-Xd7">
+                            <tableViewSection id="DD4-r5-Xd7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NlA-Cq-ZWL" style="IBUITableViewCellStyleDefault" id="sCd-nt-4gm">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sCd-nt-4gm" id="uLe-tm-hrP">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -157,9 +190,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ckA-TI-32Q" style="IBUITableViewCellStyleDefault" id="Tpo-Tr-gYc">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tpo-Tr-gYc" id="jCs-0P-ctq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -169,11 +203,12 @@
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -183,7 +218,9 @@
                             <outlet property="delegate" destination="g1K-4v-zyo" id="6OC-QY-gJU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lDe-dz-4vF"/>
+                    <navigationItem key="navigationItem" title="Game Paused" id="lDe-dz-4vF">
+                        <barButtonItem key="backBarButtonItem" title="Resume" id="52Q-zf-jR7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="quitCell" destination="Tpo-Tr-gYc" id="Yue-DN-ZHs"/>
                         <outlet property="resumeCell" destination="sCd-nt-4gm" id="XWf-rO-w2b"/>
@@ -191,7 +228,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WG-2U-6bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="72"/>
+            <point key="canvasLocation" x="1178" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LlA-A6-fDO">
@@ -214,6 +251,7 @@
     </scenes>
     <resources>
         <image name="bg1.jpg" width="640" height="1136"/>
+        <image name="cards2.png" width="40" height="40"/>
         <image name="woodbg.jpg" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -221,4 +259,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="eKh-Jq-pve"/>
+    </inferredMetricsTieBreakers>
 </document>
