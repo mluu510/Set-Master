@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardView.h"
 
 @interface SetTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) NSArray *set;
+@property (weak, nonatomic) IBOutlet CardView *card1;
+@property (weak, nonatomic) IBOutlet CardView *card2;
+@property (weak, nonatomic) IBOutlet CardView *card3;
+
 
 @end

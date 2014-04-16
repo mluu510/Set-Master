@@ -31,11 +31,11 @@
 		276D8C0518F8C0AD0016E263 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C0418F8C0AD0016E263 /* MenuViewController.m */; };
 		276D8C0818F8CCA60016E263 /* FooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C0718F8CCA60016E263 /* FooterCell.m */; };
 		276D8C0B18F910550016E263 /* SetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C0A18F910550016E263 /* SetTableViewCell.m */; };
+		276D8C0F18FE633F0016E263 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 276D8C0E18FE633F0016E263 /* success.m4a */; };
 		27AFFF6218F6488500F895F1 /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6118F6488500F895F1 /* select.wav */; };
 		27AFFF6418F648C500F895F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AFFF6318F648C500F895F1 /* AVFoundation.framework */; };
 		27AFFF6618F64A5E00F895F1 /* select2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6518F64A5E00F895F1 /* select2.wav */; };
 		27AFFF6818F64C9100F895F1 /* select2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6718F64B0800F895F1 /* select2.m4a */; };
-		27AFFF6E18F651E800F895F1 /* success2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6D18F651E800F895F1 /* success2.m4a */; };
 		27AFFF7018F6553900F895F1 /* select3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6F18F6553900F895F1 /* select3.mp3 */; };
 		27AFFF7218F6566100F895F1 /* select3.mov in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF7118F6566100F895F1 /* select3.mov */; };
 		27AFFF7418F656A900F895F1 /* select4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF7318F656A900F895F1 /* select4.mp3 */; };
@@ -91,11 +91,11 @@
 		276D8C0718F8CCA60016E263 /* FooterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooterCell.m; sourceTree = "<group>"; };
 		276D8C0918F910550016E263 /* SetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewCell.h; sourceTree = "<group>"; };
 		276D8C0A18F910550016E263 /* SetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewCell.m; sourceTree = "<group>"; };
+		276D8C0E18FE633F0016E263 /* success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success.m4a; sourceTree = "<group>"; };
 		27AFFF6118F6488500F895F1 /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		27AFFF6318F648C500F895F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27AFFF6518F64A5E00F895F1 /* select2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select2.wav; sourceTree = "<group>"; };
 		27AFFF6718F64B0800F895F1 /* select2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = select2.m4a; sourceTree = "<group>"; };
-		27AFFF6D18F651E800F895F1 /* success2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success2.m4a; sourceTree = "<group>"; };
 		27AFFF6F18F6553900F895F1 /* select3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select3.mp3; sourceTree = "<group>"; };
 		27AFFF7118F6566100F895F1 /* select3.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = select3.mov; sourceTree = "<group>"; };
 		27AFFF7318F656A900F895F1 /* select4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select4.mp3; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				27AFFF7E18F8BDA300F895F1 /* cards2@2x.png */,
-				27AFFF6D18F651E800F895F1 /* success2.m4a */,
+				276D8C0E18FE633F0016E263 /* success.m4a */,
 				27AFFF7318F656A900F895F1 /* select4.mp3 */,
 				27AFFF6118F6488500F895F1 /* select.wav */,
 				27AFFF7118F6566100F895F1 /* select3.mov */,
@@ -317,8 +317,8 @@
 				27AFFF7218F6566100F895F1 /* select3.mov in Resources */,
 				27589E4118ED19AA00BB768B /* Main.storyboard in Resources */,
 				27AFFF7018F6553900F895F1 /* select3.mp3 in Resources */,
+				276D8C0F18FE633F0016E263 /* success.m4a in Resources */,
 				27AFFF6218F6488500F895F1 /* select.wav in Resources */,
-				27AFFF6E18F651E800F895F1 /* success2.m4a in Resources */,
 				27589E6518ED1E9F00BB768B /* bg1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

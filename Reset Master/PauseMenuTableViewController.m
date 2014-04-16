@@ -7,6 +7,7 @@
 //
 
 #import "PauseMenuTableViewController.h"
+#import "SetTableViewCell.h"
 
 @interface PauseMenuTableViewController () <UIAlertViewDelegate>
 
@@ -19,14 +20,43 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"woodbg@2x.jpg"]];
-    self.tableView.backgroundColor = background;
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"woodbg@2x.jpg"]];
+    self.tableView.backgroundView = background;
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return @"Found Sets";
+    }
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UILabel *myLabel = [[UILabel alloc] init];
+    myLabel.frame = CGRectMake(0, 20, 320, 20);
+    myLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    myLabel.textColor = [UIColor whiteColor];
+    myLabel.textAlignment = NSTextAlignmentCenter;
+    myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    
+    UIView *headerView = [[UIView alloc] init];
+    [headerView addSubview:myLabel];
+    
+    return headerView;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
+        // Resume and Quit button
         case 0:
             return 2;
+        // Set Cell Count
         case 1:
             return self.sets.count;
     }
@@ -35,6 +65,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
+        //
+        // Resume and Quit button
+        //
         case 0: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Menu Item"];
             switch (indexPath.row) {
@@ -49,31 +82,54 @@
             }
             return cell;
         }
+            
+        //
+        // Set Cell
+        //
         case 1: {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Set Cell"];
+            SetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Set Cell"];
+            NSArray *set = [self.sets objectAtIndex:indexPath.row];
+            cell.card1.setCard = set[0];
+            cell.card2.setCard = set[1];
+            cell.card3.setCard = set[2];
             return cell;
         }
     }
     return nil;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    if (cell == self.resumeCell) {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    } else if (cell == self.quitCell) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:nil delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-//        [alert show];
-//        
-//
-//    }
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.section) {
+        case 0:
+            return 44;
+        case 1:
+            return 130;
+    }
+    return 0;
+}
 
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if (buttonIndex == 1) { // User clicked "Yes"
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//    }
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                [self.navigationController popViewControllerAnimated:YES];
+                break;
+            case 1: {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?" message:nil delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+                [alert show];
+            }
+            default:
+                break;
+        }
+    }
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) { // User clicked "Yes"
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 
 @end

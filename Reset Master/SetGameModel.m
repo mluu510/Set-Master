@@ -27,12 +27,17 @@
     return self.deck.count;
 }
 
+- (NSArray *)foundSets {
+    return [self.sets copy];
+}
+
 - (id)initWithGameMode:(GameMode)gameMode {
     if (self = [super init]) {
         self.gameMode = gameMode;
         self.deck = [@[] mutableCopy];
         self.playCards = [@[] mutableCopy];
         self.selectedCards = [@[] mutableCopy];
+        self.sets = [@[] mutableCopy];
         self.score = 0;
         
         if (self.gameMode == EASY) {
@@ -129,7 +134,7 @@
             [self.delegate removeCellAtIndexPaths:indexPaths];
             
             // Add set to sets array
-            [self.sets addObject:[self.selectedCards copy]];
+            [self.sets insertObject:[self.selectedCards copy] atIndex:0];
             
             // Draw more cards if less than 12
             if (self.playCards.count < 12)

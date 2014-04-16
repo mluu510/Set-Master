@@ -11,6 +11,7 @@
 #import "SetCard.h"
 #import "CardCell.h"
 #import "FooterCell.h"
+#import "PauseMenuTableViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface GameViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SetGameModelDelegate>
@@ -39,6 +40,7 @@
 
 - (void)correctMatch {
     [self.successSound play];
+    [self.successSound prepareToPlay];
 }
 
 - (void)incorrectMatch {
@@ -63,10 +65,11 @@
     
     NSURL *selectURL = [[NSBundle mainBundle] URLForResource:@"select4" withExtension:@"mp3"];
     self.selectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:selectURL error:nil];
+    [self.selectSound prepareToPlay];
     
-    NSURL *successURL = [[NSBundle mainBundle] URLForResource:@"success2" withExtension:@"m4a"];
+    NSURL *successURL = [[NSBundle mainBundle] URLForResource:@"success" withExtension:@"m4a"];
     self.successSound = [[AVAudioPlayer alloc] initWithContentsOfURL:successURL error:nil];
-    
+    [self.successSound prepareToPlay];
 
 }
 
@@ -103,6 +106,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.model selectCardAtIndex:indexPath.item];
     [self.selectSound play];
+    [self.selectSound prepareToPlay];
     
 }
 
@@ -130,6 +134,11 @@
 #define COLLECTION_VIEW_MARGIN 8
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(COLLECTION_VIEW_MARGIN, COLLECTION_VIEW_MARGIN, 0, COLLECTION_VIEW_MARGIN);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PauseMenuTableViewController *pauseVC = segue.destinationViewController;
+    pauseVC.sets = [self.model foundSets];
 }
 
 @end

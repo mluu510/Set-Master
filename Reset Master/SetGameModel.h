@@ -36,6 +36,7 @@ typedef enum {
 
 - (NSUInteger)numPlayCards;
 - (NSUInteger)cardsLeft;
+- (NSArray *)foundSets;
 
 - (BOOL)hasSet;
 

@@ -7,21 +7,20 @@
 //
 
 #import "SetTableViewCell.h"
+#import "CardView.h"
 
 @interface SetTableViewCell()
-@property (weak, nonatomic) IBOutlet UIView *card1;
-@property (weak, nonatomic) IBOutlet UIView *card2;
-@property (weak, nonatomic) IBOutlet UIView *card3;
+
 
 @end
 
 @implementation SetTableViewCell
 
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -29,13 +28,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
