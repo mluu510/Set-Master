@@ -10,4 +10,6 @@
 
 @interface PauseMenuTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *sets;
+
 @end
