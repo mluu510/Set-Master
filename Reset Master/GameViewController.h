@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "SetGameModel.h"
 
+@protocol SetGameControllerDelegate <NSObject>
+
+- (void)updateTime:(NSDate *)newDate;
+
+@end
 
 @interface GameViewController : UIViewController
 
+@property (nonatomic, weak) id <SetGameControllerDelegate> delegate;
 @property (nonatomic) GameMode mode;
 
 @end

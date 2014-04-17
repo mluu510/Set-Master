@@ -11,6 +11,7 @@
 
 @interface PauseMenuTableViewController () <UIAlertViewDelegate>
 
+@property (nonatomic, strong) NSDate *pauseStartTime;
 
 @end
 
@@ -23,6 +24,15 @@
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"woodbg@2x.jpg"]];
     self.tableView.backgroundView = background;
     
+    self.pauseStartTime = [NSDate date];
+    NSLog(@"Start Time: %@", self.startTime);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    NSTimeInterval endInterval = -[self.pauseStartTime timeIntervalSinceNow];
+    self.startTime = [self.startTime dateByAddingTimeInterval:endInterval];
+    NSLog(@"End Time: %@", self.startTime);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

@@ -11,5 +11,6 @@
 @interface PauseMenuTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *sets;
+@property (nonatomic, strong) NSDate *startTime;
 
 @end

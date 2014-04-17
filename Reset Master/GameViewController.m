@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) AVAudioPlayer *selectSound;
 @property (nonatomic, strong) AVAudioPlayer *successSound;
+@property (nonatomic, strong) AVAudioPlayer *incorrectSound;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSTimer *timer;
@@ -45,7 +46,10 @@
 
 - (void)incorrectMatch {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    NSLog(@"Vibrated");
+    [self.incorrectSound play];
+    [self.incorrectSound prepareToPlay];
+    
+    self.startTime = [self.startTime dateByAddingTimeInterval:-10];
 }
 
 - (void)viewDidLoad {
@@ -70,6 +74,10 @@
     NSURL *successURL = [[NSBundle mainBundle] URLForResource:@"success" withExtension:@"m4a"];
     self.successSound = [[AVAudioPlayer alloc] initWithContentsOfURL:successURL error:nil];
     [self.successSound prepareToPlay];
+    
+    NSURL *incorrectURL = [[NSBundle mainBundle] URLForResource:@"incorrect" withExtension:@"wav"];
+    self.incorrectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:incorrectURL error:nil];
+    [self.incorrectSound prepareToPlay];
 
 }
 
@@ -139,6 +147,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     PauseMenuTableViewController *pauseVC = segue.destinationViewController;
     pauseVC.sets = [self.model foundSets];
+    pauseVC.startTime = self.startTime;
 }
 
 @end

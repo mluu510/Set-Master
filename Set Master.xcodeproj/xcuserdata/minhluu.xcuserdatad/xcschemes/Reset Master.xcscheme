@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27589E2918ED19AA00BB768B"
                BuildableName = "Reset Master.app"
-               BlueprintName = "Reset Master"
-               ReferencedContainer = "container:Reset Master.xcodeproj">
+               BlueprintName = "Set Master"
+               ReferencedContainer = "container:Set Master.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27589E4A18ED19AA00BB768B"
                BuildableName = "Reset MasterTests.xctest"
-               BlueprintName = "Reset MasterTests"
-               ReferencedContainer = "container:Reset Master.xcodeproj">
+               BlueprintName = "Set MasterTests"
+               ReferencedContainer = "container:Set Master.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
             BuildableName = "Reset Master.app"
-            BlueprintName = "Reset Master"
-            ReferencedContainer = "container:Reset Master.xcodeproj">
+            BlueprintName = "Set Master"
+            ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
             BuildableName = "Reset Master.app"
-            BlueprintName = "Reset Master"
-            ReferencedContainer = "container:Reset Master.xcodeproj">
+            BlueprintName = "Set Master"
+            ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
             BuildableName = "Reset Master.app"
-            BlueprintName = "Reset Master"
-            ReferencedContainer = "container:Reset Master.xcodeproj">
+            BlueprintName = "Set Master"
+            ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

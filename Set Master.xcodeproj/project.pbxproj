@@ -34,6 +34,8 @@
 		276D8C0F18FE633F0016E263 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 276D8C0E18FE633F0016E263 /* success.m4a */; };
 		276D8C1118FF84770016E263 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276D8C1018FF84770016E263 /* HeaderView.xib */; };
 		276D8C1418FF89240016E263 /* LearnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C1318FF89240016E263 /* LearnTableViewController.m */; };
+		276D8C1818FFAF8C0016E263 /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 276D8C1718FFAF8C0016E263 /* incorrect.wav */; };
+		276D8C1B18FFB0AD0016E263 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276D8C1A18FFB0AD0016E263 /* SetViewController.m */; };
 		27AFFF6218F6488500F895F1 /* select.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6118F6488500F895F1 /* select.wav */; };
 		27AFFF6418F648C500F895F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27AFFF6318F648C500F895F1 /* AVFoundation.framework */; };
 		27AFFF6618F64A5E00F895F1 /* select2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27AFFF6518F64A5E00F895F1 /* select2.wav */; };
@@ -56,23 +58,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27589E2A18ED19AA00BB768B /* Reset Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reset Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27589E2A18ED19AA00BB768B /* Set Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Set Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27589E2D18ED19AA00BB768B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27589E2F18ED19AA00BB768B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		27589E3118ED19AA00BB768B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		27589E3518ED19AA00BB768B /* Reset Master-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reset Master-Info.plist"; sourceTree = "<group>"; };
+		27589E3518ED19AA00BB768B /* Set Master-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Set Master-Info.plist"; sourceTree = "<group>"; };
 		27589E3718ED19AA00BB768B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27589E3918ED19AA00BB768B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		27589E3B18ED19AA00BB768B /* Reset Master-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reset Master-Prefix.pch"; sourceTree = "<group>"; };
+		27589E3B18ED19AA00BB768B /* Set Master-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Set Master-Prefix.pch"; sourceTree = "<group>"; };
 		27589E3C18ED19AA00BB768B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		27589E3D18ED19AA00BB768B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		27589E4018ED19AA00BB768B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27589E4218ED19AA00BB768B /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		27589E4318ED19AA00BB768B /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		27589E4518ED19AA00BB768B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27589E4B18ED19AA00BB768B /* Reset MasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reset MasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27589E4B18ED19AA00BB768B /* Set MasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Set MasterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27589E4C18ED19AA00BB768B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		27589E5418ED19AA00BB768B /* Reset MasterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reset MasterTests-Info.plist"; sourceTree = "<group>"; };
+		27589E5418ED19AA00BB768B /* Set MasterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Set MasterTests-Info.plist"; sourceTree = "<group>"; };
 		27589E5618ED19AA00BB768B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27589E5818ED19AA00BB768B /* Reset_MasterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reset_MasterTests.m; sourceTree = "<group>"; };
 		27589E6218ED1A9300BB768B /* woodbg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "woodbg@2x.jpg"; sourceTree = "<group>"; };
@@ -97,6 +99,9 @@
 		276D8C1018FF84770016E263 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		276D8C1218FF89240016E263 /* LearnTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnTableViewController.h; sourceTree = "<group>"; };
 		276D8C1318FF89240016E263 /* LearnTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnTableViewController.m; sourceTree = "<group>"; };
+		276D8C1718FFAF8C0016E263 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
+		276D8C1918FFB0AD0016E263 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		276D8C1A18FFB0AD0016E263 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		27AFFF6118F6488500F895F1 /* select.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select.wav; sourceTree = "<group>"; };
 		27AFFF6318F648C500F895F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27AFFF6518F64A5E00F895F1 /* select2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = select2.wav; sourceTree = "<group>"; };
@@ -147,8 +152,8 @@
 		27589E2B18ED19AA00BB768B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27589E2A18ED19AA00BB768B /* Reset Master.app */,
-				27589E4B18ED19AA00BB768B /* Reset MasterTests.xctest */,
+				27589E2A18ED19AA00BB768B /* Set Master.app */,
+				27589E4B18ED19AA00BB768B /* Set MasterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +173,8 @@
 		27589E3318ED19AA00BB768B /* Reset Master */ = {
 			isa = PBXGroup;
 			children = (
+				276D8C1918FFB0AD0016E263 /* SetViewController.h */,
+				276D8C1A18FFB0AD0016E263 /* SetViewController.m */,
 				27589E3C18ED19AA00BB768B /* AppDelegate.h */,
 				27589E3D18ED19AA00BB768B /* AppDelegate.m */,
 				27589E3F18ED19AA00BB768B /* Main.storyboard */,
@@ -203,6 +210,7 @@
 		27589E3418ED19AA00BB768B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				276D8C1718FFAF8C0016E263 /* incorrect.wav */,
 				27AFFF7E18F8BDA300F895F1 /* cards2@2x.png */,
 				276D8C0E18FE633F0016E263 /* success.m4a */,
 				27AFFF7318F656A900F895F1 /* select4.mp3 */,
@@ -213,10 +221,10 @@
 				27AFFF6F18F6553900F895F1 /* select3.mp3 */,
 				27589E6418ED1E9F00BB768B /* bg1.jpg */,
 				27589E6218ED1A9300BB768B /* woodbg@2x.jpg */,
-				27589E3518ED19AA00BB768B /* Reset Master-Info.plist */,
+				27589E3518ED19AA00BB768B /* Set Master-Info.plist */,
 				27589E3618ED19AA00BB768B /* InfoPlist.strings */,
 				27589E3918ED19AA00BB768B /* main.m */,
-				27589E3B18ED19AA00BB768B /* Reset Master-Prefix.pch */,
+				27589E3B18ED19AA00BB768B /* Set Master-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,7 +241,7 @@
 		27589E5318ED19AA00BB768B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				27589E5418ED19AA00BB768B /* Reset MasterTests-Info.plist */,
+				27589E5418ED19AA00BB768B /* Set MasterTests-Info.plist */,
 				27589E5518ED19AA00BB768B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -242,9 +250,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		27589E2918ED19AA00BB768B /* Reset Master */ = {
+		27589E2918ED19AA00BB768B /* Set Master */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27589E5C18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Reset Master" */;
+			buildConfigurationList = 27589E5C18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Set Master" */;
 			buildPhases = (
 				27589E2618ED19AA00BB768B /* Sources */,
 				27589E2718ED19AA00BB768B /* Frameworks */,
@@ -254,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = "Reset Master";
+			name = "Set Master";
 			productName = "Reset Master";
-			productReference = 27589E2A18ED19AA00BB768B /* Reset Master.app */;
+			productReference = 27589E2A18ED19AA00BB768B /* Set Master.app */;
 			productType = "com.apple.product-type.application";
 		};
-		27589E4A18ED19AA00BB768B /* Reset MasterTests */ = {
+		27589E4A18ED19AA00BB768B /* Set MasterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27589E5F18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Reset MasterTests" */;
+			buildConfigurationList = 27589E5F18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Set MasterTests" */;
 			buildPhases = (
 				27589E4718ED19AA00BB768B /* Sources */,
 				27589E4818ED19AA00BB768B /* Frameworks */,
@@ -272,9 +280,9 @@
 			dependencies = (
 				27589E5118ED19AA00BB768B /* PBXTargetDependency */,
 			);
-			name = "Reset MasterTests";
+			name = "Set MasterTests";
 			productName = "Reset MasterTests";
-			productReference = 27589E4B18ED19AA00BB768B /* Reset MasterTests.xctest */;
+			productReference = 27589E4B18ED19AA00BB768B /* Set MasterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -291,7 +299,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 27589E2518ED19AA00BB768B /* Build configuration list for PBXProject "Reset Master" */;
+			buildConfigurationList = 27589E2518ED19AA00BB768B /* Build configuration list for PBXProject "Set Master" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -304,8 +312,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27589E2918ED19AA00BB768B /* Reset Master */,
-				27589E4A18ED19AA00BB768B /* Reset MasterTests */,
+				27589E2918ED19AA00BB768B /* Set Master */,
+				27589E4A18ED19AA00BB768B /* Set MasterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27589E6318ED1A9300BB768B /* woodbg@2x.jpg in Resources */,
+				276D8C1818FFAF8C0016E263 /* incorrect.wav in Resources */,
 				27589E4618ED19AA00BB768B /* Images.xcassets in Resources */,
 				276D8C1118FF84770016E263 /* HeaderView.xib in Resources */,
 				27589E3818ED19AA00BB768B /* InfoPlist.strings in Resources */,
@@ -350,6 +359,7 @@
 				276D8C0B18F910550016E263 /* SetTableViewCell.m in Sources */,
 				27589E7418EE6F4A00BB768B /* SetGameModel.m in Sources */,
 				276D8C1418FF89240016E263 /* LearnTableViewController.m in Sources */,
+				276D8C1B18FFB0AD0016E263 /* SetViewController.m in Sources */,
 				27589E4418ED19AA00BB768B /* GameViewController.m in Sources */,
 				27589E3E18ED19AA00BB768B /* AppDelegate.m in Sources */,
 				27AFFF7718F658C900F895F1 /* PauseMenuTableViewController.m in Sources */,
@@ -376,7 +386,7 @@
 /* Begin PBXTargetDependency section */
 		27589E5118ED19AA00BB768B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 27589E2918ED19AA00BB768B /* Reset Master */;
+			target = 27589E2918ED19AA00BB768B /* Set Master */;
 			targetProxy = 27589E5018ED19AA00BB768B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -485,9 +495,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Reset Master/Reset Master-Prefix.pch";
-				INFOPLIST_FILE = "Reset Master/Reset Master-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Reset Master/Set Master-Prefix.pch";
+				INFOPLIST_FILE = "Reset Master/Set Master-Info.plist";
+				PRODUCT_NAME = "Set Master";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -498,9 +508,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Reset Master/Reset Master-Prefix.pch";
-				INFOPLIST_FILE = "Reset Master/Reset Master-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Reset Master/Set Master-Prefix.pch";
+				INFOPLIST_FILE = "Reset Master/Set Master-Info.plist";
+				PRODUCT_NAME = "Set Master";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -520,8 +530,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Reset MasterTests/Reset MasterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Reset MasterTests/Set MasterTests-Info.plist";
+				PRODUCT_NAME = "Set MasterTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -538,8 +548,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reset Master/Reset Master-Prefix.pch";
-				INFOPLIST_FILE = "Reset MasterTests/Reset MasterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Reset MasterTests/Set MasterTests-Info.plist";
+				PRODUCT_NAME = "Set MasterTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -548,7 +558,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27589E2518ED19AA00BB768B /* Build configuration list for PBXProject "Reset Master" */ = {
+		27589E2518ED19AA00BB768B /* Build configuration list for PBXProject "Set Master" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27589E5A18ED19AA00BB768B /* Debug */,
@@ -557,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27589E5C18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Reset Master" */ = {
+		27589E5C18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Set Master" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27589E5D18ED19AA00BB768B /* Debug */,
@@ -566,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27589E5F18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Reset MasterTests" */ = {
+		27589E5F18ED19AA00BB768B /* Build configuration list for PBXNativeTarget "Set MasterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27589E6018ED19AA00BB768B /* Debug */,
