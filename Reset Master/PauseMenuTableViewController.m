@@ -34,15 +34,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UILabel *myLabel = [[UILabel alloc] init];
-    myLabel.frame = CGRectMake(0, 20, 320, 20);
-    myLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-    myLabel.textColor = [UIColor whiteColor];
-    myLabel.textAlignment = NSTextAlignmentCenter;
-    myLabel.text = [self tableView:tableView titleForHeaderInSection:section];
-    
-    UIView *headerView = [[UIView alloc] init];
-    [headerView addSubview:myLabel];
+    UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil] firstObject];
     
     return headerView;
 }

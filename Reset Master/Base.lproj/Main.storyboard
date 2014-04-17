@@ -104,6 +104,77 @@
             </objects>
             <point key="canvasLocation" x="745" y="72"/>
         </scene>
+        <!--Learn Table View Controller - How to Play-->
+        <scene sceneID="F9U-ve-Wvl">
+            <objects>
+                <tableViewController id="AGL-wc-Qff" customClass="LearnTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iR3-dK-kGb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="ESy-ES-ta1">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NNv-UU-6Mq" rowHeight="134" style="IBUITableViewCellStyleDefault" id="TYJ-zw-Ys9">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="134"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYJ-zw-Ys9" id="kpl-WC-s2y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="The goal of the game is to form a set. A set is a group of three cards where all the properties are either unique or same." lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" id="NNv-UU-6Mq">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="133"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Example" footerTitle="Same Color" id="pbk-xH-ds5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="130" id="f4e-RD-9Du">
+                                        <rect key="frame" x="0.0" y="281" width="320" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f4e-RD-9Du" id="kzw-GQ-e2n">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9o-T2-g1G" customClass="CardView">
+                                                    <rect key="frame" x="130" y="5" width="60" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7I-E3-zs0" customClass="CardView">
+                                                    <rect key="frame" x="62" y="5" width="60" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3F-zk-7DZ" customClass="CardView">
+                                                    <rect key="frame" x="198" y="5" width="60" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="AGL-wc-Qff" id="N8p-Lh-U6t"/>
+                            <outlet property="delegate" destination="AGL-wc-Qff" id="eF5-7t-UJP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="How to Play" id="qGS-KK-tFc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMM-2Q-mdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="732"/>
+        </scene>
         <!--Menu View Controller - Reset Master-->
         <scene sceneID="Zhv-Yi-5ty">
             <objects>
@@ -164,6 +235,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AGL-wc-Qff" kind="push" id="T7q-JQ-nh4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -225,22 +299,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkR-vS-XGq" customClass="CardView">
-                                            <rect key="frame" x="130" y="5" width="60" height="121"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkR-vS-XGq" customClass="CardView">
+                                            <rect key="frame" x="130" y="5" width="60" height="120"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="dd1-v7-rbc"/>
+                                                <constraint firstAttribute="height" constant="120" id="ztw-OQ-1or"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-aT-UTj" customClass="CardView">
-                                            <rect key="frame" x="62" y="5" width="60" height="121"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-aT-UTj" customClass="CardView">
+                                            <rect key="frame" x="62" y="5" width="60" height="120"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="120" id="cMo-ko-qxA"/>
+                                                <constraint firstAttribute="width" constant="60" id="kRO-53-2oC"/>
+                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-8y-9kA" customClass="CardView">
-                                            <rect key="frame" x="198" y="5" width="60" height="121"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-8y-9kA" customClass="CardView">
+                                            <rect key="frame" x="198" y="5" width="60" height="120"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="d3H-ZP-RIi"/>
+                                                <constraint firstAttribute="height" constant="120" id="jNV-6e-JEd"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Tvd-aT-UTj" secondAttribute="centerY" id="6kQ-01-tJj"/>
+                                        <constraint firstItem="SMe-8y-9kA" firstAttribute="leading" secondItem="bkR-vS-XGq" secondAttribute="trailing" constant="8" id="LG7-VP-ORi"/>
+                                        <constraint firstAttribute="centerX" secondItem="bkR-vS-XGq" secondAttribute="centerX" id="OVU-Lz-WRo"/>
+                                        <constraint firstAttribute="centerY" secondItem="SMe-8y-9kA" secondAttribute="centerY" id="PFh-8P-BNf"/>
+                                        <constraint firstItem="bkR-vS-XGq" firstAttribute="leading" secondItem="Tvd-aT-UTj" secondAttribute="trailing" constant="8" id="Zwc-8I-DNF"/>
+                                        <constraint firstAttribute="centerY" secondItem="bkR-vS-XGq" secondAttribute="centerY" id="fue-RJ-H29"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
