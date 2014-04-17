@@ -26,6 +26,22 @@
 @property (weak, nonatomic) IBOutlet CardView *set4Card1View;
 @property (weak, nonatomic) IBOutlet CardView *set4Card2View;
 @property (weak, nonatomic) IBOutlet CardView *set4Card3View;
+
+@property (weak, nonatomic) IBOutlet CardView *set5Card1View;
+@property (weak, nonatomic) IBOutlet CardView *set5Card2View;
+@property (weak, nonatomic) IBOutlet CardView *set5Card3View;
+
+@property (weak, nonatomic) IBOutlet CardView *set6Card1View;
+@property (weak, nonatomic) IBOutlet CardView *set6Card2View;
+@property (weak, nonatomic) IBOutlet CardView *set6Card3View;
+
+@property (weak, nonatomic) IBOutlet CardView *set7Card1View;
+@property (weak, nonatomic) IBOutlet CardView *set7Card2View;
+@property (weak, nonatomic) IBOutlet CardView *set7Card3View;
+
+@property (weak, nonatomic) IBOutlet CardView *set8Card1View;
+@property (weak, nonatomic) IBOutlet CardView *set8Card2View;
+@property (weak, nonatomic) IBOutlet CardView *set8Card3View;
 @end
 
 @implementation LearnTableViewController
@@ -73,6 +89,41 @@
     self.set4Card1View.setCard = set4Card1;
     self.set4Card2View.setCard = set4Card2;
     self.set4Card3View.setCard = set4Card3;
+    
+    SetCard *set5Card1 = [[SetCard alloc] initWithSymbol:CIRCLE color:BLUE shading:OPEN number:1];
+    SetCard *set5Card2 = [[SetCard alloc] initWithSymbol:CIRCLE color:RED shading:SOLID number:1];
+    SetCard *set5Card3 = [[SetCard alloc] initWithSymbol:CIRCLE color:GREEN shading:STRIPED number:1];
+    
+    self.set5Card1View.setCard = set5Card1;
+    self.set5Card2View.setCard = set5Card2;
+    self.set5Card3View.setCard = set5Card3;
+    
+    SetCard *set6Card1 = [[SetCard alloc] initWithSymbol:CIRCLE color:BLUE shading:STRIPED number:2];
+    SetCard *set6Card2 = [[SetCard alloc] initWithSymbol:SQUARE color:RED shading:STRIPED number:2];
+    SetCard *set6Card3 = [[SetCard alloc] initWithSymbol:TRIANGLE color:GREEN shading:STRIPED number:2];
+    
+    self.set6Card1View.setCard = set6Card1;
+    self.set6Card2View.setCard = set6Card2;
+    self.set6Card3View.setCard = set6Card3;
+    
+    // 3 differences
+    SetCard *set7Card1 = [[SetCard alloc] initWithSymbol:SQUARE color:GREEN shading:OPEN number:3];
+    SetCard *set7Card2 = [[SetCard alloc] initWithSymbol:TRIANGLE color:BLUE shading:OPEN number:2];
+    SetCard *set7Card3 = [[SetCard alloc] initWithSymbol:CIRCLE color:RED shading:OPEN number:1];
+    
+    self.set7Card1View.setCard = set7Card1;
+    self.set7Card2View.setCard = set7Card2;
+    self.set7Card3View.setCard = set7Card3;
+    
+    // 4 differences
+    SetCard *set8Card1 = [[SetCard alloc] initWithSymbol:CIRCLE color:BLUE shading:SOLID number:2];
+    SetCard *set8Card2 = [[SetCard alloc] initWithSymbol:SQUARE color:RED shading:STRIPED number:3];
+    SetCard *set8Card3 = [[SetCard alloc] initWithSymbol:TRIANGLE color:GREEN shading:OPEN number:1];
+    
+    self.set8Card1View.setCard = set8Card1;
+    self.set8Card2View.setCard = set8Card2;
+    self.set8Card3View.setCard = set8Card3;
+    
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
