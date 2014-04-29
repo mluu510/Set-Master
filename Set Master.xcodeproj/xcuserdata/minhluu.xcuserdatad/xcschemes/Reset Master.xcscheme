@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27589E2918ED19AA00BB768B"
-               BuildableName = "Reset Master.app"
+               BuildableName = "Set Master.app"
                BlueprintName = "Set Master"
                ReferencedContainer = "container:Set Master.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27589E4A18ED19AA00BB768B"
-               BuildableName = "Reset MasterTests.xctest"
+               BuildableName = "Set MasterTests.xctest"
                BlueprintName = "Set MasterTests"
                ReferencedContainer = "container:Set Master.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
-            BuildableName = "Reset Master.app"
+            BuildableName = "Set Master.app"
             BlueprintName = "Set Master"
             ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
-            BuildableName = "Reset Master.app"
+            BuildableName = "Set Master.app"
             BlueprintName = "Set Master"
             ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27589E2918ED19AA00BB768B"
-            BuildableName = "Reset Master.app"
+            BuildableName = "Set Master.app"
             BlueprintName = "Set Master"
             ReferencedContainer = "container:Set Master.xcodeproj">
          </BuildableReference>

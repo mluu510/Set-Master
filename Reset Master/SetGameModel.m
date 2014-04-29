@@ -175,13 +175,12 @@
         [[sets objectAtIndex:3] addObject:@(setCard.number)];
     }
     
-    BOOL isSet = YES;
-    
     // If set count is 1, the set contains all same property. If set count is 3, the set contains all unique property
     for (NSMutableSet *set in sets)
-        if (!(set.count == 1 || set.count == 3))
-            isSet = NO;
-    return isSet;
+        if (set.count == 1 || set.count == 3)
+            return YES;
+    
+    return NO;
 }
 
 - (void)drawThreeCards {
