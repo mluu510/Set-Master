@@ -14,19 +14,17 @@
 #import "PauseMenuTableViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface GameViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SetGameModelDelegate>
+@interface GameViewController () <UICollectionViewDataSource, UICollectionViewDelegate, SetGameModelDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) SetGameModel *model;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) AVAudioPlayer *selectSound;
-@property (nonatomic, strong) AVAudioPlayer *successSound;
-@property (nonatomic, strong) AVAudioPlayer *incorrectSound;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, strong) NSTimer *timer;
-@property (weak, nonatomic) IBOutlet UILabel *cardsLeftLabel;
+
 @property (nonatomic, weak) FooterCell *footerCell;
 
+@property (nonatomic, strong) NSMutableArray *audioPlayers;
 
 @end
 
@@ -40,14 +38,20 @@
 }
 
 - (void)correctMatch {
-    [self.successSound play];
-    [self.successSound prepareToPlay];
+    NSURL *soundUrl = [[NSBundle mainBundle] URLForResource:@"success" withExtension:@"m4a"];
+    AVAudioPlayer *sound = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    [sound prepareToPlay];
+    [sound play];
+    [self.audioPlayers addObject:sound];
 }
 
 - (void)incorrectMatch {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    [self.incorrectSound play];
-    [self.incorrectSound prepareToPlay];
+    NSURL *soundUrl = [[NSBundle mainBundle] URLForResource:@"incorrect" withExtension:@"wav"];
+    AVAudioPlayer *sound = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    [sound prepareToPlay];
+    [sound play];
+    [self.audioPlayers addObject:sound];
     
     self.startTime = [self.startTime dateByAddingTimeInterval:-10];
 }
@@ -67,18 +71,13 @@
     self.formatter.dateFormat = NSDateFormatterNoStyle;
     self.formatter.timeStyle = NSDateFormatterShortStyle;
     
-    NSURL *selectURL = [[NSBundle mainBundle] URLForResource:@"select4" withExtension:@"mp3"];
-    self.selectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:selectURL error:nil];
-    [self.selectSound prepareToPlay];
-    
-    NSURL *successURL = [[NSBundle mainBundle] URLForResource:@"success" withExtension:@"m4a"];
-    self.successSound = [[AVAudioPlayer alloc] initWithContentsOfURL:successURL error:nil];
-    [self.successSound prepareToPlay];
-    
-    NSURL *incorrectURL = [[NSBundle mainBundle] URLForResource:@"incorrect" withExtension:@"wav"];
-    self.incorrectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:incorrectURL error:nil];
-    [self.incorrectSound prepareToPlay];
+    self.audioPlayers= [@[] mutableCopy];
 
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    [self.audioPlayers removeObject:player];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -113,8 +112,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.model selectCardAtIndex:indexPath.item];
-    [self.selectSound play];
-    [self.selectSound prepareToPlay];
+    
+    NSURL *selectURL = [[NSBundle mainBundle] URLForResource:@"select4" withExtension:@"mp3"];
+    AVAudioPlayer *selectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:selectURL error:nil];
+    [selectSound prepareToPlay];
+    [selectSound play];
+    [self.audioPlayers addObject:selectSound];
     
 }
 
